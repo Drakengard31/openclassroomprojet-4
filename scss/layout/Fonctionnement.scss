@@ -1,0 +1,51 @@
+$primary-color: #9356dc;
+$secondary-color: #FF79da;
+$tertiary-color: #99e2d0;
+$background-light: #f6f6f6;
+$text-dark: #333;
+$grey-light: #eaeaea;
+
+@mixin container {
+width: 100%;
+
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.functioning {
+  @include container;
+  padding: 2rem 1rem;
+  background-color: white;
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+  .step {
+    @include flex-center;
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background-color: $grey-light;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    &__number {
+      position: absolute;
+      left: -0.75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: $primary-color;
+      color: white;
+      border-radius: 50%;
+      @include flex-center;
+    }
+
+    i {
+      margin-right: 1rem;
+      color: #7e7e7e;
+    }
+  }
+}

@@ -5,9 +5,10 @@
 }
 
 body {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: #333;
+  background-color: #f6f6f6;
 }
 
 .main-container {
@@ -33,7 +34,7 @@ body {
   background-color: #eaeaea;
 }
 .header__location i {
-  color: #353535;
+  color: #333;
 }
 
-/*# sourceMappingURL=style.css.map */
+

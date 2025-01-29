@@ -3,45 +3,50 @@ $secondary-color: #FF79da;
 $tertiary-color: #99e2d0;
 $background-light: #f6f6f6;
 $text-dark: #333;
+$grey-light: #eaeaea;
 
-@mixin mobile-first {
-  @media (min-width: 375px) {
-    @content;
-  }
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: $text-dark;
+  background-color: $background-light;
 }
+
 .main-container {
   max-width: 100%;
   margin: 0 auto;
 }
+
+// Header
 .header {
   &__logo {
     text-align: center;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  img{
+  img {
     width: 40%;
     max-width: 100%;
   }
-}
-.header__location {
-display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: #eaeaea;
-  i {
-    color: #353535;
+  &__location {
+    @include flex-center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: $grey-light;
+    i {
+      color: $text-dark;
+    }
   }
 }
