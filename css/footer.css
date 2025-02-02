@@ -1,0 +1,35 @@
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 1.5rem;
+}
+.footer__logo {
+  filter: invert(1);
+  width: 139px;
+  margin-bottom: 1rem;
+}
+.footer__nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer__nav ul li {
+  margin-bottom: 0.5rem;
+}
+.footer__nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+.footer__nav ul li a i {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+}
+@media (min-width: 1200px) {
+  .footer__nav ul li a {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

@@ -5,6 +5,11 @@ $background-light: #f6f6f6;
 $text-dark: #333;
 $grey-light: #eaeaea;
 
+@mixin desktop {
+  @media (min-width: 1200px){
+    @content;
+  }
+}
 @mixin container {
 width: 100%;
 
@@ -23,6 +28,19 @@ width: 100%;
   h2 {
     margin-bottom: 1.5rem;
   }
+
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+    @include desktop {
+      .functioning__steps{
+        flex-direction: row;
+        justify-content: space-between;
+      }
+  }
+
   .step {
     @include flex-center;
     position: relative;
@@ -31,6 +49,22 @@ width: 100%;
     background-color: $grey-light;
     border-radius: 1.25rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    @include desktop {
+      flex: 1;
+      margin: 0 1rem;
+    }
+
+    &:hover {
+      background-color: lighten($primary-color, 35%);
+    }
+
+    i {
+      color: $primary-color;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+      transition: color 0.2s;
+    }
 
     &__number {
       position: absolute;
@@ -41,11 +75,11 @@ width: 100%;
       color: white;
       border-radius: 50%;
       @include flex-center;
+      font-size: 0.9rem;
     }
-
-    i {
-      margin-right: 1rem;
-      color: #7e7e7e;
+    p{
+      margin: 0;
+      font-weight: 500;
     }
   }
-}
+  }

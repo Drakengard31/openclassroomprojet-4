@@ -1,0 +1,75 @@
+$primary-color: #9356dc;
+$secondary-color: #FF79da;
+$tertiary-color: #99e2d0;
+$background-light: #f6f6f6;
+$text-dark: #333;
+$grey-light: #eaeaea;
+
+@mixin desktop {
+  @media (min-width: 1200px){
+    @content;
+  }
+}
+.restaurants {
+  padding: 2rem 1rem;
+  background-color: $grey-light;
+  h2 {
+    margin-bottom: 2rem;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+.card {
+  width: 100%;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+  &__image {
+    position: relative;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card__badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem;
+      background-color: $tertiary-color;
+      color: darken($tertiary-color, 40%);
+      border-radius: 0.25rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  &__favorite {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:hover i {
+      font-weight: 900;
+      background: linear-gradient($primary-color, $secondary-color);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+}

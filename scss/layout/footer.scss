@@ -1,0 +1,43 @@
+@mixin desktop {
+  @media (min-width: 1200px){
+    @content;
+  }
+}
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 1.5rem;
+
+  &__logo {
+    filter: invert(1);
+    width: 139px;
+    margin-bottom: 1rem;
+  }
+
+  &__nav {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        a {
+          color: white;
+          text-decoration: none;
+
+          i {
+            width: 1.5rem;
+            margin-right: 0.5rem;
+          }
+          @include desktop {
+            flex-direction: row;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
