@@ -5,6 +5,9 @@ $background-light: #f6f6f6;
 $text-dark: #333;
 $grey-light: #eaeaea;
 
+html{
+  scroll-behavior: smooth;
+}
 .hero {
   text-align: center;
   padding: 2rem 1rem;
@@ -21,6 +24,8 @@ $grey-light: #eaeaea;
   }
 
   .btn-primary {
+    display: inline-block;
+    text-decoration: none;
     padding: 1rem 2rem;
     border: none;
     border-radius: 2rem;
@@ -30,5 +35,9 @@ $grey-light: #eaeaea;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     cursor: pointer;
     transition: all 0.3s;
+    &:hover {
+      opacity: 0.8;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
   }
 }

@@ -47,7 +47,7 @@ $grey-light: #eaeaea;
       right: 1rem;
       padding: 0.5rem;
       background-color: $tertiary-color;
-      color: darken($tertiary-color, 40%);
+      color: $tertiary-color, 40%;
       border-radius: 0.25rem;
     }
   }

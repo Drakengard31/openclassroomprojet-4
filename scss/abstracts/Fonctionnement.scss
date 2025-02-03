@@ -1,24 +1,5 @@
-$primary-color: #9356dc;
-$secondary-color: #FF79da;
-$tertiary-color: #99e2d0;
-$background-light: #f6f6f6;
-$text-dark: #333;
-$grey-light: #eaeaea;
-
-@mixin desktop {
-  @media (min-width: 1200px){
-    @content;
-  }
-}
-@mixin container {
-width: 100%;
-
-}
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import "mixin";
+@import 'colors';
 
 .functioning {
   @include container;
@@ -56,7 +37,7 @@ width: 100%;
     }
 
     &:hover {
-      background-color: lighten($primary-color, 35%);
+      background-color: $primary-color, 35%;
     }
 
     i {
