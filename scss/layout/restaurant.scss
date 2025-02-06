@@ -1,15 +1,5 @@
-$primary-color: #9356dc;
-$secondary-color: #FF79da;
-$tertiary-color: #99e2d0;
-$background-light: #f6f6f6;
-$text-dark: #333;
-$grey-light: #eaeaea;
-
-@mixin desktop {
-  @media (min-width: 1200px){
-    @content;
-  }
-}
+@import "../abstracts/colors";
+@import "../abstracts/mixin";
 .restaurants {
   padding: 2rem 1rem;
   background-color: $grey-light;
@@ -47,7 +37,7 @@ $grey-light: #eaeaea;
       right: 1rem;
       padding: 0.5rem;
       background-color: $tertiary-color;
-      color: $tertiary-color, 40%;
+      color: #008766;
       border-radius: 0.25rem;
     }
   }

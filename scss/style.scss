@@ -1,7 +1,7 @@
-@use 'abstracts/colors.scss';
-@use 'abstracts/mixin.scss';
-@use 'layout/footer.scss';
-@use 'layout/header.scss';
-@use 'abstracts/Fonctionnement';
-@use 'layout/menu.scss';
-@use 'layout/restaurant.scss';
+@use "abstracts/colors";
+@use "abstracts/mixin";
+@use "layout/header";
+@use "layout/menu";
+@use "abstracts/Fonctionnement";
+@use "layout/restaurant";
+@use "layout/footer";
