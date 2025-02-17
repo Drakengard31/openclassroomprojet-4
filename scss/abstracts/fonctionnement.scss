@@ -23,7 +23,7 @@
   }
 
   .step {
-    @include flex-center;
+    display: flex;
     position: relative;
     margin-bottom: 1rem;
     padding: 1.5rem;
@@ -35,18 +35,12 @@
       flex: 1;
       margin: 0 1rem;
     }
-
-    &:hover {
-      background-color: $primary-color, 35%;
-    }
-
     i {
       color: $primary-color;
       margin-right: 1rem;
       font-size: 1.2rem;
       transition: color 0.2s;
     }
-
     &__number {
       position: absolute;
       left: -0.75rem;

@@ -35,5 +35,18 @@ html{
       opacity: 0.8;
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
+    @mixin desktop {
+      @media (min-width: 1200px) {
+        .hero{
+          padding: 3rem 2rem;
+        }
+        h1{
+          font-size: 2rem;
+        }
+        p{
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }

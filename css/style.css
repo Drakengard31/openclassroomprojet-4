@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -26,17 +31,15 @@ img {
   background-color: white;
 }
 .header__logo img {
-  width: 40%;
+  width: 50%;
   max-width: 100%;
 }
 .header__logo {
   text-align: center;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.header img {
-  width: 40%;
-  max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .header:last-child {
   background-color: #eaeaea;
@@ -52,6 +55,16 @@ img {
   color: #333;
 }
 
+@media (min-width: 1200px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  .header__logo img {
+    width: 10%;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -108,8 +121,6 @@ html {
 }
 .functioning .step {
   display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   margin-bottom: 1rem;
   padding: 1.5rem;
@@ -122,9 +133,6 @@ html {
     flex: 1;
     margin: 0 1rem;
   }
-}
-.functioning .step:hover {
-  background-color: #9356dc, 35%;
 }
 .functioning .step i {
   color: #9356dc;
@@ -165,6 +173,9 @@ html {
 @media (min-width: 1200px) {
   .restaurants__cards {
     grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
   }
 }
 
@@ -180,7 +191,15 @@ html {
 }
 .card__image img {
   width: 100%;
+  height: 231px;
+  display: block;
   object-fit: cover;
+}
+@media (min-width: 1200px) {
+  .card__image {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 .card__image .card__badge {
   position: absolute;
@@ -202,11 +221,29 @@ html {
   background: none;
   font-size: 1.5rem;
   cursor: pointer;
+  position: relative;
+}
+.card__favorite i {
+  transition: all 1s ease;
 }
 .card__favorite:hover i {
   font-weight: 900;
   background: linear-gradient(#9356dc, #FF79da);
   -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}
+.card__favorite i::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  color: #000;
+  transition: all 1s ease;
+}
+.card__favorite:hover i::before {
+  font-weight: 900;
+  background: linear-gradient(#9356dc, #FF79da);
+  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -238,9 +275,22 @@ html {
   margin-right: 0.5rem;
 }
 @media (min-width: 1200px) {
-  .footer__nav ul li a {
+  .footer__nav ul {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+  }
+  .footer__logo {
+    margin-bottom: 0;
   }
 }
 
