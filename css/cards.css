@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes loader {
   from {
     opacity: 1;
@@ -29,7 +30,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: loader 0.3s 3s forwards;
+  animation: loader 0.3s 2s forwards;
 }
 .loader__spinner {
   width: 100px;
@@ -52,6 +53,84 @@
   animation-delay: -1s;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes loader {
+  from {
+    opacity: 1;
+    z-index: 1000;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.loader {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: loader 0.3s 2s forwards;
+}
+.loader__spinner {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.loader__spinner::before, .loader__spinner::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: spin 2s infinite ease-in-out;
+}
+.loader__spinner::before {
+  background: linear-gradient(45deg, #9356dc, #FF79da);
+}
+.loader__spinner::after {
+  background: linear-gradient(45deg, #FF79da, #99e2d0);
+  animation-delay: -1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -79,6 +158,7 @@ body {
 }
 
 .header__logo {
+  width: 100%;
   text-align: center;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -326,7 +406,7 @@ body {
     margin: 0 auto;
   }
   .header__logo img {
-    width: 20%;
+    width: 10%;
   }
   .restaurant-image {
     height: 400px;
@@ -340,6 +420,28 @@ body {
     display: block;
     max-width: 1200px;
     margin: 0 auto;
+    animation: fadeIn 1s ease-in forwards;
+  }
+  .menu-section.entrées {
+    animation-delay: 2s;
+  }
+  .menu-section.plats {
+    animation-delay: 3s;
+  }
+  .menu-section.desserts {
+    animation-delay: 4s;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(0, -20%, 0);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: translate3d(0, 0, 0);
+    }
   }
   .menu-section h3 {
     display: inline-block;
