@@ -129,7 +129,6 @@ body {
   margin-top: -40px;
   z-index: 1;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 .restaurant-title {
@@ -140,7 +139,6 @@ body {
   margin-bottom: 20px;
   cursor: pointer;
   font-family: Shrikhand;
-  font-style: italic;
 }
 .restaurant-title__favorite {
   border: none;
@@ -163,7 +161,7 @@ body {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
   color: #000;
-  transition: all 1s ease;
+  transition: all 0.1s ease;
 }
 .restaurant-title__favorite:hover i::before {
   font-weight: 900;
@@ -171,6 +169,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  transition: all 1s ease;
 }
 
 .menu-section {
@@ -246,12 +245,12 @@ body {
 }
 
 .menu-item h4 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0;
 }
 
 .menu-item p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #7f8c8d;
   margin: 0;
 }
@@ -336,7 +335,6 @@ body {
 
 @media (min-width: 1200px) {
   .main-container {
-    max-width: 1200px;
     margin: 0 auto;
   }
   .header__logo img {
@@ -376,6 +374,23 @@ body {
     text-align: left;
     width: 67%;
     margin: 20px auto;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media (max-width: 768px) {
+  .menu-section {
+    animation: fadeIn 1s ease-out forwards;
   }
 }
 
