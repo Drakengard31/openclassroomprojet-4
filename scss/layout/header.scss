@@ -40,21 +40,45 @@ img {
     display: flex;
     justify-content: center;
   }
+
+  &__logo:first-child {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &__logo:nth-child(2) {
+    background-color: #eaeaea;
+    justify-content: center;
+    padding: 15px 0;
+    box-shadow: none;
+    width: 100%;
+
+    i {
+      margin-right: 10px;
+      color: #353535;
+    }
+
+    p {
+      color: #353535;
+      font-weight: 500;
+    }
+  }
+
   &:last-child {
     background-color: $grey-light;
     gap: 1rem;
   }
   &__location {
     display: flex;
-    align-items: center ;
+    align-items: center;
     gap: 0.5rem;
     font-size: 1rem;
 
     i {
       color: $text-dark;
     }
-     }
-   }
+  }
+}
+
 @include desktop {
   .header {
     display: flex;

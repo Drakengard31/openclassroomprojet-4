@@ -42,6 +42,24 @@ img {
   display: flex;
   justify-content: center;
 }
+.header__logo:first-child {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header__logo:nth-child(2) {
+  background-color: #eaeaea;
+  justify-content: center;
+  padding: 15px 0;
+  box-shadow: none;
+  width: 100%;
+}
+.header__logo:nth-child(2) i {
+  margin-right: 10px;
+  color: #353535;
+}
+.header__logo:nth-child(2) p {
+  color: #353535;
+  font-weight: 500;
+}
 .header:last-child {
   background-color: #eaeaea;
   gap: 1rem;
@@ -73,11 +91,15 @@ html {
 .hero {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: #eaeaea;
 }
 .hero h1 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
+}
+@media (min-width: 1200px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 }
 .hero p {
   margin-bottom: 2rem;
@@ -103,8 +125,13 @@ html {
 
 .functioning {
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 3rem 2rem;
   background-color: white;
+}
+@media (min-width: 1200px) {
+  .functioning {
+    padding: 3rem 15rem;
+  }
 }
 .functioning h2 {
   margin-bottom: 1.5rem;
@@ -165,6 +192,11 @@ html {
 }
 .restaurants h2 {
   margin-bottom: 2rem;
+}
+@media (min-width: 1200px) {
+  .restaurants h2 {
+    margin-left: 330px;
+  }
 }
 .restaurants__cards {
   display: grid;
@@ -286,12 +318,12 @@ html {
   .footer {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
     align-items: center;
     padding: 2rem 5rem;
   }
   .footer__logo {
     margin-bottom: 0;
+    margin-left: 60px;
   }
 }
 
@@ -435,7 +467,6 @@ body {
   margin-bottom: 20px;
   cursor: pointer;
   font-family: Shrikhand;
-  font-style: italic;
 }
 .restaurant-title__favorite {
   border: none;
@@ -458,7 +489,7 @@ body {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
   color: #000;
-  transition: all 1s ease;
+  transition: all 0.1s ease;
 }
 .restaurant-title__favorite:hover i::before {
   font-weight: 900;
@@ -466,6 +497,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  transition: all 1s ease;
 }
 
 .menu-section {
@@ -475,7 +507,6 @@ body {
 }
 
 .menu-section h3 {
-  color: #7f8c8d;
   text-transform: uppercase;
   font-size: 1rem;
   border-bottom: 3px solid #99e2d0;
@@ -613,7 +644,6 @@ body {
   .footer {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
     align-items: center;
     padding: 2rem 5rem;
     position: relative;
@@ -621,6 +651,7 @@ body {
   }
   .footer__logo {
     margin-bottom: 0;
+    margin-left: 60px;
   }
   .footer__nav ul {
     flex-direction: row;

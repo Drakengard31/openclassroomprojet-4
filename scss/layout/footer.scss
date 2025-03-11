@@ -44,12 +44,12 @@
   @include desktop {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
     align-items: center;
     padding: 2rem 5rem;
 
     &__logo {
       margin-bottom: 0;
+      margin-left: 60px;
     }
   }
 }

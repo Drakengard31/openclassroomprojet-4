@@ -1,0 +1,77 @@
+/* animations.css */
+
+/* Animation pour faire apparaître les plats progressivement */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Délai d'apparition pour chaque groupe de plats */
+.menu-section.entrées .menu-item {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+.menu-section.plats .menu-item {
+    animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+    opacity: 0;
+}
+
+.menu-section.desserts .menu-item {
+    animation: fadeIn 0.5s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+/* Animation pour la coche qui coulisse */
+.menu-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.menu-item__check {
+    position: absolute;
+    right: -50px;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    height: 100%;
+    background-color: #99e2d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(50px);
+}
+
+.menu-item:hover .menu-item__check {
+    transform: translateX(0);
+}
+
+/* Gestion du texte trop long avec points de suspension */
+.menu-item-description {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .menu-section.entrées .menu-item {
+        animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    .menu-section.plats .menu-item {
+        animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+    }
+
+    .menu-section.desserts .menu-item {
+        animation: fadeIn 0.5s ease-in-out 1s forwards;
+    }
+}
