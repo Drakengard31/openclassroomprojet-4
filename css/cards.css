@@ -177,7 +177,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .menu-section h3 {
   text-transform: uppercase;
   font-size: 1rem;
@@ -202,13 +201,13 @@ body {
 }
 .menu-item:hover .price {
   transform: translateX(-50px);
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease;
 }
 .menu-item:hover .menu-item__check {
   transform: translateX(-50px);
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease;
 }
-.menu-item:hover .menu-item p {
+.menu-item:hover .menu-item-description {
   max-width: calc(100% - 100px); /* Réduit la largeur du texte pour laisser de la place à la coche et au prix */
   white-space: nowrap; /* Empêche le texte de passer à la ligne */
   overflow: hidden; /* Cache le texte qui dépasse */
@@ -262,20 +261,11 @@ body {
   white-space: nowrap;
 }
 
-.menu-item .price {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1.1rem;
-  color: #2d3436;
-  font-family: Roboto;
-}
-
 .order-button {
   text-align: center;
   margin-top: 30px;
   padding-bottom: 30px;
 }
-
 .order-button button {
   background: linear-gradient(90deg, #ff79da, #9356dc);
   color: white;
@@ -287,7 +277,6 @@ body {
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
 }
-
 .order-button button:hover {
   opacity: 0.8;
 }
@@ -371,6 +360,33 @@ body {
     text-align: left;
     width: 67%;
     margin: 20px auto;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  .menu-item:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  .menu-item:nth-child(2) {
+    animation-delay: 0.7s;
+  }
+  .menu-item:nth-child(3) {
+    animation-delay: 1s;
+  }
+  .menu-item:nth-child(4) {
+    animation-delay: 1.5s;
+  }
+  .menu-item:nth-child(5) {
+    animation-delay: 2s;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @media (max-width: 768px) {
