@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -130,7 +129,7 @@ html {
 }
 @media (min-width: 1200px) {
   .functioning {
-    padding: 3rem 15rem;
+    padding: 3rem 16rem;
   }
 }
 .functioning h2 {
@@ -505,7 +504,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .menu-section h3 {
   text-transform: uppercase;
   font-size: 1rem;
@@ -526,28 +524,32 @@ body {
   overflow: hidden;
   position: relative;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 .menu-item:hover .price {
   transform: translateX(-50px);
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease;
 }
 .menu-item:hover .menu-item__check {
-  transform: translateX(0);
-  font-size: 24px;
-  color: #72d29a;
-  opacity: 1;
-  visibility: visible;
-  position: absolute;
-  right: 0;
-  transition: opacity 0.5s ease, visibility 1s ease;
+  transform: translateX(-50px);
+  transition: transform 0.5s ease;
+}
+.menu-item:hover .menu-item-description {
+  max-width: calc(100% - 100px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-item-description {
   flex: 1;
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-item .price {
   font-size: 1.1rem;
   color: #2d3436;
-  transform: translateX(0);
   transition: all 0.5s ease;
 }
 .menu-item__check {
@@ -556,15 +558,13 @@ body {
   top: 0;
   bottom: 0;
   width: 50px;
-  height: 70px;
+  height: 100%;
   background-color: #99e2d0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 0;
-  visibility: hidden;
-  border-radius: 0 15px 15px 0;
+  transition: transform 0.5s ease;
+  border-radius: 0 10px 10px 0;
 }
 .menu-item__check i {
   color: white;
@@ -574,20 +574,18 @@ body {
 .menu-item h4 {
   font-size: 0.9rem;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .menu-item p {
   font-size: 0.8rem;
   color: #7f8c8d;
   margin: 0;
-}
-
-.menu-item .price {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1.1rem;
-  color: #2d3436;
-  font-family: Roboto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .order-button {
@@ -595,7 +593,6 @@ body {
   margin-top: 30px;
   padding-bottom: 30px;
 }
-
 .order-button button {
   background: linear-gradient(90deg, #ff79da, #9356dc);
   color: white;
@@ -607,7 +604,6 @@ body {
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
 }
-
 .order-button button:hover {
   opacity: 0.8;
 }
@@ -679,16 +675,6 @@ body {
     display: block;
     max-width: 1200px;
     margin: 0 auto;
-    animation: fadeIn 4s ease-in forwards;
-  }
-  .menu-section.entrées {
-    animation-delay: 2s;
-  }
-  .menu-section.plats {
-    animation-delay: 3s;
-  }
-  .menu-section.desserts {
-    animation-delay: 4s;
   }
   .menu-section h3 {
     display: inline-block;
@@ -701,23 +687,61 @@ body {
     text-align: left;
     width: 67%;
     margin: 20px auto;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  .menu-item:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  .menu-item:nth-child(2) {
+    animation-delay: 0.7s;
+  }
+  .menu-item:nth-child(3) {
+    animation-delay: 1s;
+  }
+  .menu-item:nth-child(4) {
+    animation-delay: 1.5s;
+  }
+  .menu-item:nth-child(5) {
+    animation-delay: 2s;
   }
 }
 @keyframes fadeIn {
   from {
     opacity: 0;
-    visibility: hidden;
-    transform: translate3d(0, -20%, 0);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    visibility: visible;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
   }
 }
-@media (max-width: 768px) {
-  .menu-section {
-    animation: fadeIn 1s ease-out forwards;
+@media (max-width: 767.98px) {
+  .menu-item {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  .menu-item:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  .menu-item:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+  .menu-item:nth-child(3) {
+    animation-delay: 0.9s;
+  }
+  .menu-item:nth-child(4) {
+    animation-delay: 1.2s;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
