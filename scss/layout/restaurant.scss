@@ -6,7 +6,8 @@
   h2 {
     margin-bottom: 2rem;
     @include desktop{
-      margin-left: 330px;
+      margin-left: -1062px;
+      text-align: center;
     }
   }
   &__cards {

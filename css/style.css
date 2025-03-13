@@ -129,7 +129,7 @@ html {
 }
 @media (min-width: 1200px) {
   .functioning {
-    padding: 3rem 16rem;
+    padding: 3rem 22rem;
   }
 }
 .functioning h2 {
@@ -194,7 +194,8 @@ html {
 }
 @media (min-width: 1200px) {
   .restaurants h2 {
-    margin-left: 330px;
+    margin-left: -1062px;
+    text-align: center;
   }
 }
 .restaurants__cards {
